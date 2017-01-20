@@ -7,7 +7,7 @@ const nodeModules = fs
   .filter(x => ['.bin'].indexOf(x) === -1)
   .reduce(
     (modules, module) => Object.assign(modules, { [module]: `commonjs ${module}` }),
-  {},
+  {}
   );
 
 const config = {
@@ -81,7 +81,7 @@ if (process.env.NODE_ENV === 'production') {
       mangle: {
         except: ['$super', '$', 'exports', 'require'],
       },
-    }),
+    })
   );
 }
 
